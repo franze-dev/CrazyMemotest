@@ -24,8 +24,8 @@ namespace Card
 		bool flipped;
 	};
 
-	Card LoadCard(string textureDir);
+	void LoadCard(Card& card, string textureDir);
 	void InitCard(Card& card, int id, int pairId);
-	void Draw();
+	void Draw(Card card);
 };
 

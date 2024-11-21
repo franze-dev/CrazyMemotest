@@ -1,18 +1,18 @@
 #include "card.h"
+
+#include "utils/window.h"
+
 #include <iostream>
 
 using namespace std;
+using namespace GeneralWindow;
 
 namespace Card
 {
-	Card LoadCard(string textureDir)
+	void LoadCard(Card& card, string textureDir)
 	{
-		Card card{};
-
 		card.texture.loadFromFile(textureDir.c_str());
 		card.sprite.setTexture(card.texture);
-
-		return card;
 	}
 
 	void InitCard(Card& card, int id, int pairId)
@@ -23,8 +23,8 @@ namespace Card
 		card.flipped = false;
 	}
 
-	void Draw()
+	void Draw(Card card)
 	{
-
+		window->draw(card.sprite);
 	}
 }
