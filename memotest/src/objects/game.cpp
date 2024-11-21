@@ -3,13 +3,16 @@
 #include "SFML/Window.hpp"
 #include "SFML/Graphics.hpp"
 
+#include "utils/window.h"
+#include "scenes/gameplay.h"
+
 #include <ctime>
 
 using namespace sf;
+using namespace GeneralWindow;
 
 namespace Memotest
 {
-	static RenderWindow* window;
 	Sprite cardSprite;
 
 	static void Load();
@@ -37,13 +40,14 @@ namespace Memotest
 
 	void Load()
 	{
-
+		Gameplay::Load();
 	}
 
 	void Init()
 	{
-		srand(time(0));
-		window = new RenderWindow(VideoMode(800, 600), "Crazy Memotest");
+		srand(static_cast <unsigned int>(time(0)));
+		GeneralWindow::Init();
+		Gameplay::Init();
 	}
 
 	void Update()
@@ -61,18 +65,19 @@ namespace Memotest
 
 	void Draw()
 	{
-	
+		window->clear();
+		Gameplay::Draw();
 		window->display();
 	}
 
 	void Unload()
 	{
-
+		Gameplay::Unload();
 	}
 
 	void Close()
 	{
-		delete window;
+		GeneralWindow::Delete();
 		Unload();
 	}
 
