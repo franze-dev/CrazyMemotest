@@ -12,13 +12,31 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="src\objects\card.cpp">
       <Filter>objects</Filter>
     </ClCompile>
+    <ClCompile Include="src\utils\sprite_manager.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\main_menu.cpp">
+      <Filter>scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\objects\game.cpp">
+      <Filter>objects</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\objects\card.h">
+      <Filter>objects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\sprite_manager.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\main_menu.h">
+      <Filter>scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\objects\game.h">
       <Filter>objects</Filter>
     </ClInclude>
   </ItemGroup>
