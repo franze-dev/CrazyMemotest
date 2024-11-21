@@ -31,6 +31,12 @@
     <ClCompile Include="src\utils\card_manager.cpp">
       <Filter>utils</Filter>
     </ClCompile>
+    <ClCompile Include="src\utils\window.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\gameplay.cpp">
+      <Filter>scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\objects\card.h">
@@ -50,6 +56,12 @@
     </ClInclude>
     <ClInclude Include="src\utils\card_manager.h">
       <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\window.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\gameplay.h">
+      <Filter>scenes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
