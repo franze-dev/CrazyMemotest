@@ -36,17 +36,10 @@ namespace CardManager
 
 			} while (!isSlotCompleted);
 
+			slots[i].currentCard.sprite.setPosition(slots[i].shape.getPosition());
+			slots[i].shape.setSize(slots[i].currentCard.sprite.getGlobalBounds().getSize());
 		}
 
-	}
-
-	bool IsCardInSlots(int cardToFindId, Slots::Slot slots[], int currentId)
-	{
-		for (int i = 0; i < currentId; i++)
-			if (slots[i].currentCard.id == cardToFindId)
-				return true;
-
-		return false;
 	}
 
 	void Load(Card::Card cards[], int totalCards)
@@ -54,8 +47,8 @@ namespace CardManager
 		string source;
 		for (int i = 0; i < totalCards; i++)
 		{
-			source = "Tiles_" + (i + 1);
-			cards[i] = Card::LoadCard(source);
+			source = "res/sprites/cards/Tiles_" + to_string(i + 1) + ".png";
+			Card::LoadCard(cards[i], source);
 		}
 	}
 
@@ -65,11 +58,23 @@ namespace CardManager
 		{
 			int pairId = (i % 2 == 0) ? i + 1 : i - 1;
 			Card::InitCard(cards[i], i, pairId);
+			cards[i].sprite.setScale(0.2f, 0.2f);
 		}
 	}
 
-	void Draw(Card::Card cards[])
+	void Draw(Slots::Slot slots[], int totalCards)
 	{
+		for (int i = 0; i < totalCards; i++)
+			Card::Draw(slots[i].currentCard);
+	}
 
+
+	bool IsCardInSlots(int cardToFindId, Slots::Slot slots[], int currentId)
+	{
+		for (int i = 0; i < currentId; i++)
+			if (slots[i].currentCard.id == cardToFindId)
+				return true;
+
+		return false;
 	}
 }
