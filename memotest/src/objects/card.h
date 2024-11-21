@@ -1,6 +1,8 @@
 #pragma once
 #include "SFML/Graphics.hpp"
 
+using namespace sf;
+
 namespace Card
 {
 	/*Texture cardTexture;
@@ -11,7 +13,14 @@ namespace Card
 
 	struct Card
 	{
-
+		Texture texture;
+		Sprite sprite;
+		int id;
+		int pairId;
+		bool guessed;
 	};
+
+	void Load(Card cards[], int totalCards);
+	void Init(Card cards[], int totalCards);
 };
 
