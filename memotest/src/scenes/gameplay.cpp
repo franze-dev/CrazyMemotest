@@ -1,7 +1,13 @@
 #include "gameplay.h"
 
+#include "objects/slot.h"
+
 namespace Gameplay
 {
+	const int totalCards = 8;
+
+	Slots::Slot slots[totalCards];
+
 	void Gameplay::Load()
 	{
 		//texura
@@ -10,7 +16,7 @@ namespace Gameplay
 	void Gameplay::Init()
 	{
 		//Cartas
-		//Slots
+		Slots::Init(slots, totalCards);
 	}
 
 	void Gameplay::Update()

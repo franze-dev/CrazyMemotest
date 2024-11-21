@@ -16,7 +16,7 @@ namespace Memotest
 	static void Unload();
 	static void Close();
 	
-
+	
 	void Memotest::Run()
 	{
 		Load();
