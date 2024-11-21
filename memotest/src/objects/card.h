@@ -24,6 +24,7 @@ namespace Card
 		bool flipped;
 	};
 
+	bool IsMouseOnCard(Card card);
 	void LoadCard(Card& card, string textureDir);
 	void InitCard(Card& card, int id, int pairId);
 	void Draw(Card card);
