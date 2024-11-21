@@ -19,16 +19,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\objects\card.cpp" />
     <ClCompile Include="src\objects\game.cpp" />
+    <ClCompile Include="src\objects\slot.cpp" />
     <ClCompile Include="src\scenes\main_menu.cpp" />
+    <ClCompile Include="src\utils\card_manager.cpp" />
     <ClCompile Include="src\utils\sprite_manager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\objects\card.h" />
     <ClInclude Include="src\objects\game.h" />
+    <ClInclude Include="src\objects\slot.h" />
     <ClInclude Include="src\scenes\main_menu.h" />
+    <ClInclude Include="src\utils\card_manager.h" />
     <ClInclude Include="src\utils\sprite_manager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

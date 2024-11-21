@@ -5,24 +5,26 @@ using namespace std;
 
 namespace Card
 {
-	void Load(Card cards[], int totalCards)
+	Card LoadCard(string textureDir)
 	{
-		string source;
-		for (int i = 0; i < totalCards; i++)
-		{
-			source = "Tiles_" + (i + 1);
-			cards[i].texture.loadFromFile(source.c_str());
-			cards[i].sprite.setTexture(cards[i].texture);
-		}
+		Card card{};
+
+		card.texture.loadFromFile(textureDir.c_str());
+		card.sprite.setTexture(card.texture);
+
+		return card;
 	}
 
-	void Init(Card cards[], int totalCards)
+	void InitCard(Card& card, int id, int pairId)
 	{
-		for (int i = 0; i < totalCards; i++)
-		{
-			cards[i].id = i;
-			cards[i].pairId = (i % 2 == 0) ? i + 1 : i - 1;
-			cards[i].guessed = false;
-		}
+		card.id = id;
+		card.pairId = pairId;
+		card.guessed = false;
+		card.flipped = false;
+	}
+
+	void Draw()
+	{
+
 	}
 }

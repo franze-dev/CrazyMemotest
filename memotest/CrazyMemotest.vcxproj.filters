@@ -24,7 +24,13 @@
     <ClCompile Include="src\objects\game.cpp">
       <Filter>objects</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\objects\slot.cpp">
+      <Filter>objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\utils\card_manager.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\objects\card.h">
@@ -38,6 +44,12 @@
     </ClInclude>
     <ClInclude Include="src\objects\game.h">
       <Filter>objects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\objects\slot.h">
+      <Filter>objects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\card_manager.h">
+      <Filter>utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
