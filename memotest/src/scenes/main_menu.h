@@ -1,5 +1,7 @@
 #pragma once
-class main_menu
+
+namespace MainMenu
 {
+
 };
 
