@@ -45,11 +45,18 @@ namespace CardManager
 	void Load(Card::Card cards[], int totalCards)
 	{
 		string source;
+		int currentCard = 0;
+
 		for (int i = 0; i < totalCards; i++)
 		{
-			source = "res/sprites/cards/Tiles_" + to_string(i + 1) + ".png";
+			if (i != 0 && i % 2 == 0)
+				currentCard++;
+			
+			source = "res/sprites/cards/Tiles_" + to_string(currentCard + 1) + ".png";
 			Card::LoadCard(cards[i], source);
 		}
+
+
 	}
 
 	void Init(Card::Card cards[], int totalCards)
