@@ -1,28 +1,33 @@
 #include "gameplay.h"
 
-void Gameplay::Load()
+namespace Gameplay
 {
-	//texura
+	void Gameplay::Load()
+	{
+		//texura
+	}
+
+	void Gameplay::Init()
+	{
+		//Cartas
+		//Slots
+	}
+
+	void Gameplay::Update()
+	{
+		//Todo
+	}
+
+	void Gameplay::Draw()
+	{
+		//Ui
+		//Cards
+	}
+
+	void Gameplay::Unload()
+	{
+		//Texturas
+	}
 }
 
-void Gameplay::Init()
-{
-	//Cartas
-	//Slots
-}
 
-void Gameplay::Update()
-{
-	//Todo
-}
-
-void Gameplay::Draw()
-{
-	//Ui
-	//Cards
-}
-
-void Gameplay::Unload()
-{
-	//Texturas
-}
