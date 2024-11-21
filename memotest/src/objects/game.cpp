@@ -1,6 +1,9 @@
 #include "game.h"
+
 #include "SFML/Window.hpp"
 #include "SFML/Graphics.hpp"
+
+#include <ctime>
 
 using namespace sf;
 
@@ -39,6 +42,7 @@ namespace Memotest
 
 	void Init()
 	{
+		srand(time(0));
 		window = new RenderWindow(VideoMode(800, 600), "Crazy Memotest");
 	}
 

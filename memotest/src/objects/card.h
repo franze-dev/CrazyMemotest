@@ -1,7 +1,10 @@
 #pragma once
 #include "SFML/Graphics.hpp"
 
+#include <iostream>
+
 using namespace sf;
+using namespace std;
 
 namespace Card
 {
@@ -18,9 +21,11 @@ namespace Card
 		int id;
 		int pairId;
 		bool guessed;
+		bool flipped;
 	};
 
-	void Load(Card cards[], int totalCards);
-	void Init(Card cards[], int totalCards);
+	Card LoadCard(string textureDir);
+	void InitCard(Card& card, int id, int pairId);
+	void Draw();
 };
 
