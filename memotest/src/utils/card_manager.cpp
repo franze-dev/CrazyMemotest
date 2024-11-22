@@ -75,7 +75,7 @@ namespace CardManager
 		return false;
 	}
 
-	void DeflippCards()
+	void DeFlippCards()
 	{
 		flippedCards[0]->flipped = false;
 		flippedCards[1]->flipped = false;
