@@ -55,15 +55,13 @@ namespace Memotest
 	void Update()
 	{
 		// check all the window's events that were triggered since the last iteration of the loop
+		Gameplay::Update();
 
 		while (window->pollEvent(GlobalEvent::event))
 		{
 			// "close requested" event: we close the window
 			if (GlobalEvent::event.type == Event::Closed)
 				window->close();
-
-			Gameplay::Update();
-
 		}
 
 	}
