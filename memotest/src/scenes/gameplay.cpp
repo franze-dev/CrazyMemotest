@@ -6,7 +6,13 @@
 
 namespace Gameplay
 {
-	static int cardsFlipped = 0;
+	static sf::Clock clock = sf::Clock();
+	
+	static float deFlipTimer;
+	static const float deFlipTime = 1.0f;
+
+	static int cardsFlipped;
+	static int cardsGuessed;
 
 	static Texture backgroundTexture;
 	static Sprite background;
@@ -15,6 +21,8 @@ namespace Gameplay
 	static Card::Card cards[totalCards];
 	static Slots::Slot slots[totalCards];
 
+
+	//static void CheckVictory();
 
 	void Gameplay::Load()
 	{
@@ -25,8 +33,13 @@ namespace Gameplay
 
 	void Gameplay::Init()
 	{
+		deFlipTimer = 0.0f;
+
 		cardsFlipped = 0;
+		cardsGuessed = 0;
+
 		Slots::Init(slots, totalCards);
+
 		CardManager::Init(cards, totalCards);
 		CardManager::OrganizeCards(cards, slots, totalCards);
 
@@ -35,14 +48,29 @@ namespace Gameplay
 
 	void Gameplay::Update()
 	{
+		sf::Time deltaTime = clock.restart();
+
 		CardManager::Update(slots, totalCards);
+
 		if (CardManager::AreTwoCardsFlipped(slots, totalCards))
 		{
-			if (!CardManager::CheckEqualCardsFlipped())
-			{	//Timer
-				CardManager::DeflippCards();
+			deFlipTimer += deltaTime.asSeconds();
+			if (CardManager::CheckEqualCardsFlipped())
+			{
+				cardsGuessed += 2;
+			}
+			else
+			{
+				if (deFlipTimer >= deFlipTime)
+				{
+					CardManager::DeFlippCards();
+					deFlipTimer = 0.0f;
+				}
 			}
 		}
+
+		cout << deFlipTimer << endl;
+		//clock.restart();
 	}
 
 	void Gameplay::Draw()
@@ -54,8 +82,11 @@ namespace Gameplay
 
 	void Gameplay::Unload()
 	{
-		
+
 	}
+
+
+	
 }
 
 
