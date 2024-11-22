@@ -21,7 +21,6 @@ namespace Memotest
 	static void Init();
 	static void Update();
 	static void Draw();
-	static void Unload();
 	static void Close();
 	
 	
@@ -73,15 +72,9 @@ namespace Memotest
 		window->display();
 	}
 
-	void Unload()
-	{
-		Gameplay::Unload();
-	}
-
 	void Close()
 	{
 		GeneralWindow::Delete();
-		Unload();
 	}
 
 }

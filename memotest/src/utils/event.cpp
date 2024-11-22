@@ -3,9 +3,4 @@
 namespace GlobalEvent
 {
 	Event event;
-
-	/*Event GetEvent()
-	{
-		return event;
-	}*/
 }
