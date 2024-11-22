@@ -5,9 +5,12 @@
 
 namespace Gameplay
 {
+	static int cardsFlipped = 0;
+
 	static const int totalCards = 8;
 	static Card::Card cards[totalCards];
 	static Slots::Slot slots[totalCards];
+
 
 	void Gameplay::Load()
 	{
@@ -16,6 +19,7 @@ namespace Gameplay
 
 	void Gameplay::Init()
 	{
+		cardsFlipped = 0;
 		Slots::Init(slots, totalCards);
 		CardManager::Init(cards, totalCards);
 		CardManager::OrganizeCards(cards, slots, totalCards);
@@ -24,6 +28,13 @@ namespace Gameplay
 	void Gameplay::Update()
 	{
 		CardManager::Update(slots, totalCards);
+		if (CardManager::AreTwoCardsFlipped(slots, totalCards))
+		{
+			if (!CardManager::CheckEqualCardsFlipped())
+			{	//Timer
+				CardManager::DeflippCards();
+			}
+		}
 	}
 
 	void Gameplay::Draw()
@@ -34,7 +45,7 @@ namespace Gameplay
 
 	void Gameplay::Unload()
 	{
-		//Texturas
+		
 	}
 }
 

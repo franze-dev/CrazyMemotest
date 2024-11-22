@@ -39,7 +39,7 @@ namespace Card
 		if (IsMouseOnCard(card) && !card.flipped)
 			if (GlobalEvent::event.type == Event::MouseButtonReleased)
 			{
-				cout << "FLIPPP " << card.id << endl;
+				card.flipped = true;
 				return true;
 			}
 
