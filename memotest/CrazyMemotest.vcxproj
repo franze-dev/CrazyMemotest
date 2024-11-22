@@ -26,6 +26,7 @@
     <ClCompile Include="src\scenes\gameplay.cpp" />
     <ClCompile Include="src\scenes\main_menu.cpp" />
     <ClCompile Include="src\utils\card_manager.cpp" />
+    <ClCompile Include="src\utils\event.cpp" />
     <ClCompile Include="src\utils\sprite_manager.cpp" />
     <ClCompile Include="src\utils\window.cpp" />
   </ItemGroup>
@@ -36,6 +37,7 @@
     <ClInclude Include="src\scenes\gameplay.h" />
     <ClInclude Include="src\scenes\main_menu.h" />
     <ClInclude Include="src\utils\card_manager.h" />
+    <ClInclude Include="src\utils\event.h" />
     <ClInclude Include="src\utils\sprite_manager.h" />
     <ClInclude Include="src\utils\window.h" />
   </ItemGroup>
