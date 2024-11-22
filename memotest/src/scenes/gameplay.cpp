@@ -7,7 +7,7 @@ namespace Gameplay
 {
 	static const int totalCards = 8;
 	static Card::Card cards[totalCards];
-	Slots::Slot slots[totalCards];
+	static Slots::Slot slots[totalCards];
 
 	void Gameplay::Load()
 	{
@@ -23,7 +23,7 @@ namespace Gameplay
 
 	void Gameplay::Update()
 	{
-		//Todo
+		CardManager::Update(slots, totalCards);
 	}
 
 	void Gameplay::Draw()

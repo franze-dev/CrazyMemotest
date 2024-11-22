@@ -51,7 +51,7 @@ namespace CardManager
 		{
 			if (i != 0 && i % 2 == 0)
 				currentCard++;
-			
+
 			source = "res/sprites/cards/Tiles_" + to_string(currentCard + 1) + ".png";
 			Card::LoadCard(cards[i], source);
 		}
@@ -67,6 +67,12 @@ namespace CardManager
 			Card::InitCard(cards[i], i, pairId);
 			cards[i].sprite.setScale(0.2f, 0.2f);
 		}
+	}
+	
+	void Update(Slots::Slot slots[], int totalCards)
+	{
+		for (int i = 0; i < totalCards; i++)
+			Card::Update(slots[i].currentCard);
 	}
 
 	void Draw(Slots::Slot slots[], int totalCards)

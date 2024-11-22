@@ -16,7 +16,8 @@ namespace Card
 
 	struct Card
 	{
-		Texture texture;
+		Texture backTexture;
+		Texture frontTexture;
 		Sprite sprite;
 		int id;
 		int pairId;
@@ -27,6 +28,7 @@ namespace Card
 	bool IsMouseOnCard(Card card);
 	void LoadCard(Card& card, string textureDir);
 	void InitCard(Card& card, int id, int pairId);
+	void Update(Card& card);
 	void Draw(Card card);
 };
 

@@ -4,6 +4,8 @@
 #include "SFML/Graphics.hpp"
 
 #include "utils/window.h"
+#include "utils/event.h"
+
 #include "scenes/gameplay.h"
 
 #include <ctime>
@@ -53,12 +55,15 @@ namespace Memotest
 	void Update()
 	{
 		// check all the window's events that were triggered since the last iteration of the loop
-		Event event;
-		while (window->pollEvent(event))
+
+		while (window->pollEvent(GlobalEvent::event))
 		{
 			// "close requested" event: we close the window
-			if (event.type == Event::Closed)
+			if (GlobalEvent::event.type == Event::Closed)
 				window->close();
+
+			Gameplay::Update();
+
 		}
 
 	}
