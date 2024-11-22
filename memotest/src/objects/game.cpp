@@ -29,40 +29,36 @@ namespace Memotest
 		Load();
 		Init();
 
-		do
+		while (window->isOpen())
 		{
 			Update();
 			Draw();
-
-		} while (true);
+		}
 
 		Close();
 	}
 
 	void Load()
 	{
+		GeneralWindow::Init();
 		Gameplay::Load();
 	}
 
 	void Init()
 	{
 		srand(static_cast <unsigned int>(time(0)));
-		GeneralWindow::Init();
 		Gameplay::Init();
 	}
 
 	void Update()
 	{
-		// check all the window's events that were triggered since the last iteration of the loop
-		Gameplay::Update();
-
 		while (window->pollEvent(GlobalEvent::event))
 		{
-			// "close requested" event: we close the window
 			if (GlobalEvent::event.type == Event::Closed)
 				window->close();
 		}
 
+		Gameplay::Update();
 	}
 
 	void Draw()
