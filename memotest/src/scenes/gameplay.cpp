@@ -3,6 +3,7 @@
 #include "objects/slot.h"
 #include "utils/card_manager.h"
 #include "utils/window.h"
+#include "utils/event.h"
 
 namespace Gameplay
 {
@@ -30,6 +31,8 @@ namespace Gameplay
 	static void CheckCardsGuessed(sf::Time deltaTime);
 
 	static bool CheckVictory();
+
+	static void Reset();
 
 	void Gameplay::Load()
 	{
@@ -67,6 +70,11 @@ namespace Gameplay
 			CheckCardsGuessed(deltaTime);
 		else
 			CardManager::Update(slots, totalCards);
+
+		if (Keyboard::isKeyPressed(Keyboard::Space))
+		{
+			Reset();
+		}
 	}
 
 	void Gameplay::Draw()
@@ -132,6 +140,19 @@ namespace Gameplay
 	bool CheckVictory()
 	{
 		return cardsGuessed == totalCards;
+	}
+
+	void Reset()
+	{
+		deFlipTimer = 0.0f;
+
+		cardsFlipped = 0;
+		cardsGuessed = 0;
+
+		Slots::Init(slots, totalCards);
+
+		CardManager::Init(cards, totalCards);
+		CardManager::OrganizeCards(cards, slots, totalCards);
 	}
 }
 
