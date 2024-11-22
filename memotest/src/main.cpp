@@ -8,7 +8,6 @@
 
 int main()
 {
-
 	Memotest::Run();
 	return 0;
 }
