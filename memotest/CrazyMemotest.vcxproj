@@ -24,7 +24,6 @@
     <ClCompile Include="src\objects\game.cpp" />
     <ClCompile Include="src\objects\slot.cpp" />
     <ClCompile Include="src\scenes\gameplay.cpp" />
-    <ClCompile Include="src\scenes\main_menu.cpp" />
     <ClCompile Include="src\utils\card_manager.cpp" />
     <ClCompile Include="src\utils\event.cpp" />
     <ClCompile Include="src\utils\sprite_manager.cpp" />
@@ -35,7 +34,6 @@
     <ClInclude Include="src\objects\game.h" />
     <ClInclude Include="src\objects\slot.h" />
     <ClInclude Include="src\scenes\gameplay.h" />
-    <ClInclude Include="src\scenes\main_menu.h" />
     <ClInclude Include="src\utils\card_manager.h" />
     <ClInclude Include="src\utils\event.h" />
     <ClInclude Include="src\utils\sprite_manager.h" />
@@ -114,7 +112,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)lib/SFML/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-system-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-system-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>call "$(SolutionDir)scripts\copy res.bat" "$(SolutionDir)" "$(OutDir)"
@@ -139,7 +137,7 @@ call "$(SolutionDir)scripts\copy DLLs -d.bat" "$(SolutionDir)" "$(OutDir)"</Comm
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)lib/SFML/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
-      <AdditionalDependencies>sfml-system.lib;sfml-window.lib;sfml-graphics.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-system.lib;sfml-window.lib;sfml-graphics.lib;sfml-audio.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>call "$(SolutionDir)scripts\copy res.bat" "$(SolutionDir)" "$(OutDir)"
