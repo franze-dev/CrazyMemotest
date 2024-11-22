@@ -117,8 +117,8 @@
       <AdditionalDependencies>sfml-system-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(SolutionDir)dlls\debug\*.dll" "$(OutDir)" /y
-copy "$(SolutionDir)dlls\*.dll" "$(OutDir)" /y</Command>
+      <Command>call "$(SolutionDir)scripts\copy res.bat" "$(SolutionDir)" "$(OutDir)"
+call "$(SolutionDir)scripts\copy DLLs -d.bat" "$(SolutionDir)" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -142,8 +142,8 @@ copy "$(SolutionDir)dlls\*.dll" "$(OutDir)" /y</Command>
       <AdditionalDependencies>sfml-system.lib;sfml-window.lib;sfml-graphics.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(SolutionDir)dlls\release\*.dll" "$(OutDir)" /y
-copy "$(SolutionDir)dlls\*.dll" "$(OutDir)" /y</Command>
+      <Command>call "$(SolutionDir)scripts\copy res.bat" "$(SolutionDir)" "$(OutDir)"
+call "$(SolutionDir)scripts\copy DLLs.bat" "$(SolutionDir)" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
