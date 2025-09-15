@@ -1,4 +1,6 @@
 # CrazyMemotest
+<img width="800" height="300" alt="Crazy Memotest Logo" src="https://github.com/user-attachments/assets/1337ff29-a961-4241-b8dd-9c28a5c49243" />
+
 By: Sofi Alvarez and Nico Leon
 
 ## Summary
